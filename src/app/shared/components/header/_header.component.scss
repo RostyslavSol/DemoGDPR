@@ -1,0 +1,16 @@
+.appHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  background-color: $color-main;
+  height: $header-height;
+
+  @include box-shadow();
+
+  &__logoContainer {
+    padding: 15px 30px;
+  }
+}

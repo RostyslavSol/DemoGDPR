@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~normalize.css/normalize.css";
+
+@import 'variables';
+@import 'mixins';
+
+// Shared components
+@import './app/shared/components/header/header.component';
+
+// View components
+@import './app/views/home/home.component';
