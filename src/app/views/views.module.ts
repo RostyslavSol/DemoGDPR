@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { HomeComponent } from './home/home.component';
 import { MaterialModule } from '../shared/material.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
 
 const components = [
-  HomeComponent
+  HomeComponent,
+  DashboardComponent
 ];
 
 @NgModule({

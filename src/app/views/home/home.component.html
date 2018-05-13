@@ -2,16 +2,16 @@
   <section class="home__image"></section>
 
   <section class="home__gradient">
-    <div class="home__question">
+    <div class="home__question" [@slideUpQuestion]>
       Ready for GDPR?
     </div>
 
-    <div class="home__infoMsg">
+    <div class="home__infoMsg" [@showInfo]>
       Assess your compliance now with Regulation Compliance Assessor System
     </div>
 
-    <div class="home__btnSection">
-      <button mat-button color="primary">
+    <div class="home__btnSection" [@slideDownBtn]>
+      <button mat-button color="primary" (click)="seeBoard()">
         SEE BOARD
       </button>
     </div>
