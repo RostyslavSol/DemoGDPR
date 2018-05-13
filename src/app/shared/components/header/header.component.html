@@ -1,5 +1,25 @@
 <header class="appHeader">
-  <div class=appHeader__logoContainer>
-    <img src="./../../../../assets/images//svg/logo.svg" alt="">
+  <div class="row">
+
+    <div class="col-3">
+      <div class="appHeader__logoContainer">
+        <img src="./../../../../assets/images/svg/logo.svg" alt="">
+      </div>
+    </div>
+
+    <div class="col-9">
+      <div class="appHeader__rightContainer">
+        <span *ngIf="isTitleVisible">
+          {{ title }}
+        </span>
+
+        <span *ngIf="isLinksVisible">
+          <a routerLink="/home">Home</a>
+          <a routerLink="/dashboard">Board</a>
+          <a routerLink="/help">Help</a>
+        </span>
+      </div>
+    </div>
+
   </div>
 </header>

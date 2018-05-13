@@ -1,0 +1,77 @@
+.home {
+
+  &__gradient {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+
+    @include gradient();
+
+    z-index: $z-ground + 1;
+  }
+
+  &__image {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 0;
+    right: 0;
+
+    z-index: $z-ground;
+
+    background-image: url('./assets/images/svg/background.svg');
+    background-origin: content-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  &__question {
+    /* Ready for GDPR? */
+
+    margin-top: 30vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 48px;
+    text-align: center;
+
+    color: #F2F2F2;
+  }
+
+  &__infoMsg {
+    /* Assess your compliance now with Regulation Compliance Assessor System */
+
+    margin-top: 5vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 18px;
+    text-align: center;
+
+    color: #F2F2F2;
+  }
+
+  &__btnSection {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding-top: 30px;
+
+    .mat-button {
+      height: 75px;
+      width: 200px;
+      font-size: 24px;
+    }
+  }
+}

@@ -12,8 +12,21 @@
 
 .pageContainer {
   position: absolute;
-  top: $header-height;
-  left: 0;
 
-  width: 100%;
+  top: $header-height;
+  bottom: 0;
+
+  left: 0;
+  right: 0;
+
+  z-index: $z-ground;
+}
+
+// Override Angular Material styles
+
+.mat-button.mat-primary {
+  color: $color-white;
+  background-color: $color-main;
+
+  @include box-shadow(4px, 4px, 4px);
 }

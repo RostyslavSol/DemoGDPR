@@ -1,16 +1,30 @@
 .appHeader {
   position: absolute;
-  top: 0;
-  left: 0;
 
-  width: 100%;
+  top: 0;
+
+  left: 0;
+  right: 0;
+
+  z-index: $z-header;
+  height: $header-height;
 
   background-color: $color-main;
-  height: $header-height;
 
   @include box-shadow();
 
+  .row {
+    margin: 0;
+  }
+
   &__logoContainer {
     padding: 15px 30px;
+  }
+
+  &__rightContainer{
+    line-height: 25px;
+    padding-top: 30px;
+    color: #F0F0F0;
+    font-size: $font-xl;
   }
 }
