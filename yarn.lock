@@ -186,6 +186,22 @@
   dependencies:
     tslib "^1.9.0"
 
+"@ngrx/db@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/db/-/db-2.1.0.tgz#dad736c86ea8f849a8fa0df3e506d7e7b9e2e930"
+
+"@ngrx/devtools@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/devtools/-/devtools-1.4.0.tgz#89b6f23f4133953085426db00af341d98d676837"
+
+"@ngrx/entity@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-5.2.0.tgz#68b90b3159bb46ec5b2d0de3fa0bf4e80e94972d"
+
+"@ngrx/store@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-5.2.0.tgz#627ed74c9cd95462930485d912a557117b23903e"
+
 "@ngtools/webpack@6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-6.0.1.tgz#1a3eee13f7319a5c2b758ae461c386e1b6c80645"
@@ -4982,7 +4998,7 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs@^6.0.0:
+rxjs@^6.0.0, rxjs@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.1.0.tgz#833447de4e4f6427b9cec3e5eb9f56415cd28315"
   dependencies:
