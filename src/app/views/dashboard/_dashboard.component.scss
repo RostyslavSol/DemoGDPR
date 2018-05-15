@@ -36,11 +36,16 @@
 
       height: 30vh - 7vh;
 
+      span {
+        display: inline-block;
+      }
+
       img {
-        display: block;
+        display: inline-block;
         width: 15vh;
         margin: auto;
         padding: 15px 10px;
+        vertical-align: bottom;
       }
     }
   }

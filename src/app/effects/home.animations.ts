@@ -17,7 +17,7 @@ export class HomeAnimations {
           'margin-top': '20vh',
           'opacity': 0
         }),
-        animate('2s', style({
+        animate('1s', style({
           'margin-top': '30vh',
           'opacity': 1
         }))
@@ -29,7 +29,7 @@ export class HomeAnimations {
     return trigger('showInfo', [
       transition(':enter', [
         style({ 'opacity': 0 }),
-        animate('4s', style({ 'opacity': 1 }))
+        animate('2s', style({ 'opacity': 1 }))
       ])
     ]);
   }
@@ -41,7 +41,7 @@ export class HomeAnimations {
           'padding-top': '200px',
           'opacity': 0
         }),
-        animate('2s', style({
+        animate('1s', style({
           'padding-top': '30px',
           'opacity': 1
         }))

@@ -23,8 +23,28 @@
 
   &__rightContainer{
     line-height: 25px;
-    padding-top: 30px;
-    color: #F0F0F0;
     font-size: $font-xl;
+    text-align: right;
+
+    padding-top: 30px;
+    padding-right: 50px;
+
+    color: $color-white;
+
+    a {
+      color: $color-white;
+      padding: 0 10px;
+
+      border-right: 1px $color-white solid;
+
+      &:hover {
+        text-decoration: none;
+        color: $color-accent;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
   }
 }

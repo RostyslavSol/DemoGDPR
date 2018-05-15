@@ -9,7 +9,7 @@ export class DashboardHelper {
   ];
 
   texts = [
-    'Assess lawfulness of personal data processing',
+    'Assess lawfulness of personal data processing. With questions from Art. 6 GDPR',
     'Check if your organization requires implementation of the Registry for processing activities',
     'Check if your organization requires assignment of Data Protection Officer',
     'Assess your ability to provide individual rights of data subjects',

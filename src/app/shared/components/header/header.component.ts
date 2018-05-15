@@ -6,8 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 
 export class HeaderComponent implements OnInit {
-  @Input()
   isHomePage: boolean;
+
+  @Input('isHomePage') set checkHomePage(flag: boolean) {
+    this.isHomePage = flag;
+    this.ngOnInit();
+  }
 
   title = 'RCA - Regulation Compliance Assessment System';
 
