@@ -1,1 +1,18 @@
-dashboard
+<div class="dashboard">
+
+  <div class="dashboard__tiles">
+    <section class="tile" *ngFor="let section of sections">
+      <div class="tile__head">
+        {{ section.title }}
+      </div>
+
+      <div class="tile__body">
+        <span>
+          {{ section.text }}
+        </span>
+        <img [src]="section.svgUrl" alt="">
+      </div>
+    </section>
+  </div>
+
+</div>

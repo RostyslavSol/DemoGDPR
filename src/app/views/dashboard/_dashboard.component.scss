@@ -1,0 +1,59 @@
+.dashboard {
+  background-color: $color-background;
+
+  height: 100%;
+  width: 100%;
+
+  &__tiles {
+    padding: 40px 80px;
+    text-align: center;
+  }
+
+  .tile {
+    height: 30vh;
+    width: 20vw;
+
+    display: inline-block;
+    vertical-align: top;
+
+    margin: 15px 35px;
+
+    background-color: $color-white;
+
+    @include box-shadow();
+
+    &__head {
+      background-color: $color-accent;
+      color: $color-white;
+
+      height: 7vh;
+      line-height: 7vh;
+    }
+
+    &__body {
+      padding: 5px 10px;
+      font-size: 10px;
+
+      height: 30vh - 7vh;
+
+      img {
+        display: block;
+        width: 15vh;
+        margin: auto;
+        padding: 15px 10px;
+      }
+    }
+  }
+
+  .tile:hover {
+    cursor: pointer;
+
+    .tile__head {
+      background-color: darken($color-accent, 10);
+    }
+
+    .tile__body {
+      background-color: darken($color-white, 10);
+    }
+  }
+}

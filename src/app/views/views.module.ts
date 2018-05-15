@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { MaterialModule } from '../shared/material.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { CommonModule } from '@angular/common';
 
 const components = [
   HomeComponent,
@@ -9,7 +10,10 @@ const components = [
 ];
 
 @NgModule({
-  imports: [MaterialModule],
+  imports: [
+    CommonModule,
+    MaterialModule
+  ],
   exports: components,
   declarations: components,
   providers: [],
