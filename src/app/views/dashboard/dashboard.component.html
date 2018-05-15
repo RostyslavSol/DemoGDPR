@@ -1,7 +1,7 @@
 <div class="dashboard">
 
   <div class="dashboard__tiles">
-    <section class="tile" *ngFor="let section of sections">
+    <section class="tile" *ngFor="let section of sections" routerLink="/details">
       <div class="tile__head">
         {{ section.title }}
       </div>

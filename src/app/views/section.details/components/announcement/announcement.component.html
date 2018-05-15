@@ -1,0 +1,28 @@
+<div class="sectionDetails__panel">
+  <div class="row">
+    <div class="col-3">
+      <img src="../../../assets/images/svg/details.announce.svg" alt="">
+    </div>
+    <div class="col-6">
+      <div class="sectionDetails__announcement">
+        <div class="sectionDetails__announcement__head">
+          {{ announcement.title }}
+        </div>
+        <div class="sectionDetails__announcement__info p-t-1">
+          {{ announcement.info }}
+        </div>
+        <ul>
+          <li *ngFor="let item of announcement.list">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-3">
+        <button mat-button color="primary">
+            START INTERVIEW
+          </button>
+    </div>
+
+  </div>
+</div>

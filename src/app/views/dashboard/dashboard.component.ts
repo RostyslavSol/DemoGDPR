@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ISectionModel } from '../../models/dashboard/section.model';
+import { ISection } from '../../models/dashboard/section.model';
 import { DashboardHelper } from './dashboard.helper';
 
 @Component({
@@ -9,7 +9,7 @@ import { DashboardHelper } from './dashboard.helper';
 
 export class DashboardComponent implements OnInit {
 
-  sections: ISectionModel[];
+  sections: ISection[];
 
   constructor() { }
 

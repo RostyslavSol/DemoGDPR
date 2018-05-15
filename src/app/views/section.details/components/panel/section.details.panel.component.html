@@ -1,0 +1,20 @@
+<div class="sectionDetails__panel m-t-2 p-t-3 p-b-3 p-l-5 p-r-5">
+  <mat-tab-group>
+    <mat-tab label="Overview">
+      <div class="p-t-4" *ngFor="let item of overview">
+        <div>
+          {{ item.title }}
+        </div>
+
+        <div>
+          {{ item.text }}
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Questionnaire">
+      <div class="p-t-4">
+        n/a
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

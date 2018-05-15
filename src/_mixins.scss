@@ -20,7 +20,23 @@
   right: 0;
 
   z-index: $z-ground;
+
+  overflow: hidden;
 }
+
+@for $i from 1 through 8 {
+  .m-t-#{$i} { margin-top:    $i * 10px; }
+  .m-b-#{$i} { margin-bottom: $i * 10px; }
+  .m-l-#{$i} { margin-left:   $i * 10px; }
+  .m-r-#{$i} { margin-right:  $i * 10px; }
+
+  .p-t-#{$i} { padding-top:    $i * 10px; }
+  .p-b-#{$i} { padding-bottom: $i * 10px; }
+  .p-l-#{$i} { padding-left:   $i * 10px; }
+  .p-r-#{$i} { padding-right:  $i * 10px; }
+}
+
+.inline-block { display: inline-block; }
 
 // Override Angular Material styles
 

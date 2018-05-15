@@ -1,4 +1,4 @@
-export interface ISectionModel {
+export interface ISection {
   title: string;
   text: string;
   redirectUrl: string;
