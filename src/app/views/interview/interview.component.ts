@@ -13,6 +13,7 @@ export class InterviewComponent implements OnInit {
 
   ngOnInit() {
     this.question = {
+      index: 1,
       title: `Consent must be unambiguous. This means customers need to easily understand what they
       are signing up for. Is there any doubt in your statements?`,
       invalidExample: {

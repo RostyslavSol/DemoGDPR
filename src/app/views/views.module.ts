@@ -9,6 +9,8 @@ import { SectionDetailsPanelComponent } from './section.details/components/panel
 import { AnnouncementComponent } from './section.details/components/announcement/announcement.component';
 import { InterviewComponent } from './interview/interview.component';
 import { QuestionComponent } from './interview/components/question/question.component';
+import { AnswersComponent } from './interview/components/answers/answers.component';
+import { FormsModule } from '@angular/forms';
 
 const components = [
   HomeComponent,
@@ -17,13 +19,15 @@ const components = [
   SectionDetailsPanelComponent,
   AnnouncementComponent,
   InterviewComponent,
-  QuestionComponent
+  QuestionComponent,
+  AnswersComponent
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule,
     MaterialModule
   ],
   exports: components,

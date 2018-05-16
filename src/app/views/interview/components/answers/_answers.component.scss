@@ -1,0 +1,21 @@
+.answers {
+  padding: 40px 20px 20px 20px;
+  height: 100%;
+  position: relative;
+
+  overflow-x: auto;
+
+  mat-radio-button {
+    padding: 20px 0;
+    font-weight: bolder;
+  }
+
+  [mat-button] {
+    font-size: 24px;
+    height: 10vh;
+    position: fixed;
+
+    left: 50vw;
+    bottom: 15vh;
+  }
+}

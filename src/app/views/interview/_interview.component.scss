@@ -38,11 +38,6 @@
     &--2 {
       height: 100%;
       z-index: $z-ground;
-
-      [mat-button] {
-        font-size: 24px;
-        height: 10vh;
-      }
     }
 
     &--3 {
@@ -69,3 +64,4 @@
 }
 
 @import './components/question/question.component';
+@import './components/answers/answers.component';

@@ -19,13 +19,7 @@
         <question [question]="question"></question>
       </div>
       <div class="interviewFrame__column--2 col-6">
-        <!-- <answer *ngFor="let answer of question.answers"></answer> -->
-
-        <div class="text-center">
-          <button mat-button color="primary">
-            SUBMIT ANSWER
-          </button>
-        </div>
+        <answers [answers]="question.answers"></answers>
       </div>
       <div class="interviewFrame__column--3 col-2">
         1

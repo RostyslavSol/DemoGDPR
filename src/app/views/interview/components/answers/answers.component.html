@@ -1,0 +1,14 @@
+<div class="answers">
+
+  <mat-radio-group [(ngModel)]="chosenAnswer">
+    <mat-radio-button color="primary" *ngFor="let answer of answers" [value]="answer">
+      {{ answer.text }}
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <div class="text-center">
+    <button mat-button color="primary">
+      SUBMIT ANSWER
+    </button>
+  </div>
+</div>
