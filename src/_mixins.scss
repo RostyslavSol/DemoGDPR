@@ -37,6 +37,8 @@
 }
 
 .inline-block { display: inline-block; }
+.pointer { cursor: pointer; }
+.link { &:hover { color: $color-accent; } }
 
 // Override Angular Material styles
 

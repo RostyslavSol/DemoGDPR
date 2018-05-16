@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IAnnouncement } from '../../../../models/section.details/announcement.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'announcement',
@@ -9,7 +10,11 @@ import { IAnnouncement } from '../../../../models/section.details/announcement.m
 export class AnnouncementComponent implements OnInit {
   @Input() announcement: IAnnouncement;
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() { }
+
+  startInterview() {
+    this._router.navigate(['/interview']);
+  }
 }

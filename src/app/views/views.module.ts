@@ -7,13 +7,17 @@ import { SectionDetailsComponent } from './section.details/section.details.compo
 import { RouterModule } from '@angular/router';
 import { SectionDetailsPanelComponent } from './section.details/components/panel/section.details.panel.component';
 import { AnnouncementComponent } from './section.details/components/announcement/announcement.component';
+import { InterviewComponent } from './interview/interview.component';
+import { QuestionComponent } from './interview/components/question/question.component';
 
 const components = [
   HomeComponent,
   DashboardComponent,
   SectionDetailsComponent,
   SectionDetailsPanelComponent,
-  AnnouncementComponent
+  AnnouncementComponent,
+  InterviewComponent,
+  QuestionComponent
 ];
 
 @NgModule({

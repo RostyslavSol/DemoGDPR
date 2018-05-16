@@ -1,0 +1,71 @@
+.interviewFrame {
+  height: 100%;
+
+  &__header {
+    background-color: $color-black;
+    color: $color-white;
+    padding: 10px 0;
+
+    z-index: $z-ground + 1;
+
+
+    @include box-shadow();
+  }
+
+  &__body {
+    height: 85%;
+    z-index: $z-ground;
+
+    .row {
+      height: 100%;
+    }
+  }
+
+  &__column {
+    &--1 {
+      height: 100%;
+      background-color: $color-background;
+      z-index: $z-ground;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      border-right: 5px solid $color-black;
+
+      @include box-shadow(4px, 0px, 4px);
+    }
+
+    &--2 {
+      height: 100%;
+      z-index: $z-ground;
+
+      [mat-button] {
+        font-size: 24px;
+        height: 10vh;
+      }
+    }
+
+    &--3 {
+      height: 100%;
+      background-color: $color-background;
+      z-index: $z-ground;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      border-left: 5px solid $color-black;
+
+      @include box-shadow(-4px, 0px, 4px);
+    }
+  }
+
+  &__footer {
+    background-color: $color-black;
+    color: $color-white;
+    padding: 10px 0;
+
+    height: 15%;
+  }
+}
+
+@import './components/question/question.component';
