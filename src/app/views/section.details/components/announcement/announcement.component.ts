@@ -15,6 +15,8 @@ export class AnnouncementComponent implements OnInit {
   ngOnInit() { }
 
   startInterview() {
-    this._router.navigate(['/interview']);
+    window.setTimeout(() => {
+      this._router.navigate(['/interview']);
+    }, 500);
   }
 }

@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() { }
 
   public seeBoard(): void {
-    this._router.navigate(['/dashboard']);
+    window.setTimeout(() => {
+      this._router.navigate(['/dashboard']);
+    }, 500);
   }
 }
