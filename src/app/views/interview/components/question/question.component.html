@@ -1,0 +1,38 @@
+<div class="question">
+  <div class="question__title">
+    {{ question.title }}
+  </div>
+
+  <div class="question__example question__example--invalid">
+    <div class="question__example__title">
+      {{ question.invalidExample.title }}
+    </div>
+    <div class="question__example__item question__example__item--invalid"
+        *ngFor="let item of question.invalidExample.list">
+      {{ item }}
+    </div>
+  </div>
+
+  <div class="question__example question__example--valid">
+    <div class="question__example__title">
+      {{ question.validExample.title }}
+    </div>
+    <div class="question__example__item question__example__item--valid"
+        *ngFor="let item of question.validExample.list">
+      {{ item }}
+    </div>
+  </div>
+
+  <div class="question__info">
+    <div class="pointer" (click)="toggleInfoVisibility()">
+      <i class="fa" [ngClass]="{
+        'fa-chevron-down': !isInfoVisible,
+        'fa-chevron-up': isInfoVisible
+      }"></i>
+      <span class="p-l-1">Show more information...</span>
+    </div>
+    <div *ngIf="isInfoVisible">
+      {{ question.info }}
+    </div>
+  </div>
+</div>

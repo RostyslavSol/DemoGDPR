@@ -1,0 +1,32 @@
+.question {
+  &__title {
+    text-align: center;
+    padding: 10px 20px;
+    color: #2c2c2c;
+    font-weight: bolder;
+  }
+
+  &__example {
+    padding: 20px;
+
+    &__item {
+      font-size: $font-m;
+
+      &--invalid {
+        color: $color-red;
+      }
+
+      &--valid {
+        color: $color-green;
+      }
+    }
+
+    &__title {
+      font-weight: bolder;
+    }
+  }
+
+  &__info {
+    padding: 20px;
+  }
+}
