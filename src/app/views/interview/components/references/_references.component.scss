@@ -1,0 +1,19 @@
+.references {
+
+  &__item {
+    padding: 10px 0 20px 0;
+
+    &__title {
+      color: $color-black;
+      font-weight: bolder;
+      margin-bottom: 10px;
+      font-size: $font-m;
+    }
+
+    &__link {
+      color: $color-accent;
+      text-decoration: underline;
+      font-size: $font-s;
+    }
+  }
+}
