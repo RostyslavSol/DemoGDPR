@@ -4,6 +4,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { HomeComponent } from './views/home/home.component';
 import { SectionDetailsComponent } from './views/section.details/section.details.component';
 import { InterviewComponent } from './views/interview/interview.component';
+import { ReportComponent } from './views/report/report.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'interview',
     component: InterviewComponent
+  },
+  {
+    path: 'report',
+    component: ReportComponent
   },
   {
     path: '',

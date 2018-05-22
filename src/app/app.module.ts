@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { SharedComponentsModule } from './shared/components/shared.components.module';
 import { ViewsModule } from './views/views.module';
+import { SharedDirectivesModule } from './shared/directives/shared.directives.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ViewsModule } from './views/views.module';
     // Custom modules
     AppRoutingModule,
     SharedComponentsModule,
+    SharedDirectivesModule,
     ViewsModule
   ],
   providers: [],

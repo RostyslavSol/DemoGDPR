@@ -12,6 +12,8 @@ import { InterviewComponent } from './interview/interview.component';
 import { AnnouncementComponent } from './section.details/components/announcement/announcement.component';
 import { SectionDetailsPanelComponent } from './section.details/components/panel/section.details.panel.component';
 import { SectionDetailsComponent } from './section.details/section.details.component';
+import { ReportComponent } from './report/report.component';
+import { SharedDirectivesModule } from '../shared/directives/shared.directives.module';
 
 const components = [
   HomeComponent,
@@ -22,7 +24,8 @@ const components = [
   InterviewComponent,
   QuestionComponent,
   AnswersComponent,
-  ReferencesComponent
+  ReferencesComponent,
+  ReportComponent
 ];
 
 @NgModule({
@@ -30,7 +33,8 @@ const components = [
     CommonModule,
     RouterModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    SharedDirectivesModule
   ],
   exports: components,
   declarations: components,
