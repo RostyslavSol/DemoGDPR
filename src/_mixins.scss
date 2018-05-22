@@ -43,6 +43,10 @@
 .pointer { cursor: pointer; }
 .link { &:hover { color: $color-accent; } }
 
+[ng-reflect-router-link] {
+  outline: none;
+}
+
 // Override Angular Material styles
 
 .mat-button.mat-primary {
