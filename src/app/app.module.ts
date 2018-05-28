@@ -20,6 +20,8 @@ import { ViewsModule } from './views/views.module';
 import { APP_CONFIG, AppConfig } from './core/tokens/app.config';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { AppStoreModule } from './core/store/store.module';
+import { SectionsResolver } from './core/resolvers/sections.resolver';
 
 
 @NgModule({
@@ -35,14 +37,18 @@ import { environment } from '../environments/environment';
     // Custom modules
     AppRoutingModule,
     ViewsModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    AppStoreModule
   ],
   providers: [
+    // Services
     ApiFactoryService,
     DashboardService,
     DetailsService,
     InterviewService,
     ReportService,
+    // Resolvers
+    SectionsResolver,
     {
       provide: APP_CONFIG,
       useClass: AppConfig
