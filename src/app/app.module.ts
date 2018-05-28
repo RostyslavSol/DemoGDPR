@@ -4,11 +4,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+
+import { ApiFactoryService } from './core/services/api.factory/api.factory.service';
+import { DashboardService } from './core/services/api.factory/delegates/dashboard.service';
+import { DetailsService } from './core/services/api.factory/delegates/details.service';
+import { InterviewService } from './core/services/api.factory/delegates/interview.service';
+import { ReportService } from './core/services/api.factory/delegates/report.service';
+
 import { SharedComponentsModule } from './shared/components/shared.components.module';
+
 import { ViewsModule } from './views/views.module';
-import { SharedDirectivesModule } from './shared/directives/shared.directives.module';
+import { APP_CONFIG, AppConfig } from './core/tokens/app.config';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -22,11 +33,25 @@ import { SharedDirectivesModule } from './shared/directives/shared.directives.mo
     BrowserAnimationsModule,
     // Custom modules
     AppRoutingModule,
-    SharedComponentsModule,
-    SharedDirectivesModule,
-    ViewsModule
+    ViewsModule,
+    SharedComponentsModule
   ],
-  providers: [],
+  providers: [
+    ApiFactoryService,
+    DashboardService,
+    DetailsService,
+    InterviewService,
+    ReportService,
+    {
+      provide: APP_CONFIG,
+      useClass: AppConfig
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: environment.interceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
