@@ -18,7 +18,7 @@ import { SharedComponentsModule } from './shared/components/shared.components.mo
 
 import { ViewsModule } from './views/views.module';
 import { APP_CONFIG, AppConfig } from './core/tokens/app.config';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 
 
@@ -31,6 +31,7 @@ import { environment } from '../environments/environment';
     RouterModule,
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     // Custom modules
     AppRoutingModule,
     ViewsModule,
