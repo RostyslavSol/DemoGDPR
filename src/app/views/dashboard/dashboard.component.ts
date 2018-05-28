@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ISection } from '../../models/dashboard/section.model';
-import { DashboardHelper } from './dashboard.helper';
+import { Observable } from 'rxjs';
+import { ApiFactoryService } from '../../core/services/api.factory/api.factory.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,19 +10,14 @@ import { DashboardHelper } from './dashboard.helper';
 
 export class DashboardComponent implements OnInit {
 
-  sections: ISection[];
+  sections$: Observable<ISection[]>;
 
-  constructor() { }
+  constructor(
+    private _apiService: ApiFactoryService
+  ) { }
 
   ngOnInit() {
-    const helper = new DashboardHelper();
-
-    this.sections = helper.titles.map((x, index) => ({
-      title:        helper.titles[index],
-      text:         helper.texts[index],
-      redirectUrl:  '/details',
-      svgUrl:       helper.svgUrls[index]
-    }));
+    this.sections$ = this._apiService.getSections();
   }
 
 }
