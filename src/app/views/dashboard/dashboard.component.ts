@@ -21,10 +21,7 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.sections$ = this._store
-      .pipe(
-        select(fromDashboard.sectionsSelector)
-      );
+    this.sections$ = this._store.select(fromDashboard.sectionsSelector);
   }
 
 }

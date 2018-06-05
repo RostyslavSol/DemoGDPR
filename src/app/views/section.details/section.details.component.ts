@@ -15,17 +15,12 @@ import { ISectionDetails } from '../../models/section.details/section.details.mo
 
 export class SectionDetailsComponent implements OnInit {
   sectionDetails$: Observable<ISectionDetails>;
-  announcement: IAnnouncement;
-  overviews: IOverviewItem;
 
   constructor(
     private _store: Store<State>
   ) { }
 
   ngOnInit() {
-    this.sectionDetails$ = this._store
-      .pipe(
-        select(fromSectionDetails.sectionDetailsSelector),
-      );
+    this.sectionDetails$ = this._store.select(fromSectionDetails.sectionDetailsSelector);
   }
 }
