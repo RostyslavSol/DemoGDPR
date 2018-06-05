@@ -26,19 +26,18 @@ export class DashboardService {
   }
 
   public getSections(): Observable<ISection[]> {
-    return (
-      this._httpClient
-      .get(this.config.sectionsUrl) as Observable<ISection[]>
-    ).pipe(
-      tap(data => {
+    return this._httpClient
+            .get<ISection[]>(this.config.sectionsUrl)
+            .pipe(
+              tap(data => {
 
-        this._store.dispatch({
-          type: DashboardActionTypes.Load,
-          payload: data
-        });
+                this._store.dispatch({
+                  type: DashboardActionTypes.LoadSections,
+                  payload: data
+                });
 
-        return data;
-      })
-    );
+                return data;
+              })
+            );
   }
 }

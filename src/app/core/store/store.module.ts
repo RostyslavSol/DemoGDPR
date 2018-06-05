@@ -2,7 +2,7 @@ import { StoreModule, ActionReducer } from "@ngrx/store";
 import { reducers, State } from "./index";
 import { environment } from "../../../environments/environment";
 
-const storeLogger = () => (reducer) => (state, action) => {
+const storeLogger = (reducer) => (state, action) => {
   const nextState = reducer(state, action);
 
   console.log(action.type);
@@ -11,7 +11,7 @@ const storeLogger = () => (reducer) => (state, action) => {
 };
 
 export function logger(reducer: ActionReducer<State>): any {
-  return storeLogger()(reducer);
+  return storeLogger(reducer);
 }
 
 export const metaReducers = environment.production ? [] : [logger];

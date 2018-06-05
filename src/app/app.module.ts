@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app.routing.module';
 
 import { ApiFactoryService } from './core/services/api.factory/api.factory.service';
 import { DashboardService } from './core/services/api.factory/delegates/dashboard.service';
-import { DetailsService } from './core/services/api.factory/delegates/details.service';
+import { SectionDetailsService } from './core/services/api.factory/delegates/details.service';
 import { InterviewService } from './core/services/api.factory/delegates/interview.service';
 import { ReportService } from './core/services/api.factory/delegates/report.service';
 
@@ -22,6 +22,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { AppStoreModule } from './core/store/store.module';
 import { SectionsResolver } from './core/resolvers/sections.resolver';
+import { SectionDetailsResolver } from './core/resolvers/section.details.resolver';
 
 
 @NgModule({
@@ -44,11 +45,12 @@ import { SectionsResolver } from './core/resolvers/sections.resolver';
     // Services
     ApiFactoryService,
     DashboardService,
-    DetailsService,
+    SectionDetailsService,
     InterviewService,
     ReportService,
     // Resolvers
     SectionsResolver,
+    SectionDetailsResolver,
     {
       provide: APP_CONFIG,
       useClass: AppConfig

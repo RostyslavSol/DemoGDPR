@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { DashboardState } from '../../core/store/reducers/dashboard.reducers';
 import { ISection } from '../../models/dashboard/section.model';
-import { State } from "./../../core/store/index";
+import { State } from './../../core/store/index';
 
 import * as fromDashboard from '../../core/store/reducers/dashboard.reducers';
 

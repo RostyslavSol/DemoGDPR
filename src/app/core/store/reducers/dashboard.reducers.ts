@@ -19,11 +19,11 @@ export const sectionsSelector = createSelector(
 );
 
 export function reducer(
-  state = initialState,
+  state: DashboardState = initialState,
   action: DashboardAction
 ): DashboardState {
   switch (action.type) {
-    case DashboardActionTypes.Load: {
+    case DashboardActionTypes.LoadSections: {
       return {
         ...state,
         sections: action.payload

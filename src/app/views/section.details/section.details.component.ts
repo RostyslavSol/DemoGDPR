@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { State } from '../../core/store';
+import * as fromSectionDetails from '../../core/store/reducers/section.details.reducers';
 import { IAnnouncement } from '../../models/section.details/announcement.model';
 import { IOverviewItem } from '../../models/section.details/overview.model';
+import { pluck } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { ISectionDetails } from '../../models/section.details/section.details.model';
 
 @Component({
   selector: 'app-section-details',
@@ -8,31 +14,18 @@ import { IOverviewItem } from '../../models/section.details/overview.model';
 })
 
 export class SectionDetailsComponent implements OnInit {
+  sectionDetails$: Observable<ISectionDetails>;
   announcement: IAnnouncement;
-  overview: IOverviewItem[];
+  overviews: IOverviewItem;
 
-  constructor() { }
+  constructor(
+    private _store: Store<State>
+  ) { }
 
   ngOnInit() {
-    this.announcement = {
-      title: 'Lawfulness of Personal Data  Processing',
-      info: 'Assess lawfulness of personal data processing according to articles of General Data Protection Regulation:',
-      list: [
-        'Article 6 EU GDPR "Lawfulness of processing"',
-        'Article 7 EU GDPR "Conditions for consent"',
-        'Article 8 EU GDPR "Conditions applicable to child\'s consent in relation to information society services"'
-      ]
-    };
-
-    this.overview = [
-      {
-        title: 'WHAT WILL BE ASKED',
-        text: 'You will be asked questions related to the professional activity of your organization. There is an option to let the system know if you don’t know the answer on the question. References and additional help to answer the questions will be provided.'
-      },
-      {
-        title: 'WOULD THIS INFORMATION BE EXPOSED',
-        text: 'The interview is fully anonymous and the answers are not stored in the system unless you are the authenticated user and directly command the system to save your interview.'
-      }
-    ];
+    this.sectionDetails$ = this._store
+      .pipe(
+        select(fromSectionDetails.sectionDetailsSelector),
+      );
   }
 }

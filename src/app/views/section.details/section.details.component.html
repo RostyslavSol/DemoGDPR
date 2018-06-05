@@ -1,7 +1,7 @@
 <div class="sectionDetails">
 
-  <announcement [announcement]="announcement"></announcement>
+  <announcement [announcement]="(sectionDetails$ | async).announcement"></announcement>
 
-  <section-details-panel [overview]="overview"></section-details-panel>
+  <section-details-panel [overview]="(sectionDetails$ | async).overviews"></section-details-panel>
 
 </div>

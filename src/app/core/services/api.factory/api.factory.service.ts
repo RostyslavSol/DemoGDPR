@@ -8,7 +8,7 @@ import { IReport }          from '../../../models/report/report.model';
 import { ISection }         from '../../../models/dashboard/section.model';
 
 import { DashboardService } from './delegates/dashboard.service';
-import { DetailsService }   from './delegates/details.service';
+import { SectionDetailsService }   from './delegates/details.service';
 import { InterviewService } from './delegates/interview.service';
 import { ReportService }    from './delegates/report.service';
 
@@ -18,7 +18,7 @@ import { Observable }       from 'rxjs';
 export class ApiFactoryService {
   constructor(
     private _dashboardService:  DashboardService,
-    private _detailsService:    DetailsService,
+    private _detailsService:    SectionDetailsService,
     private _interviewService:  InterviewService,
     private _reportService:     ReportService
   ) { }

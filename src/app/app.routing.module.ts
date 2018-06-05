@@ -6,6 +6,7 @@ import { SectionDetailsComponent } from './views/section.details/section.details
 import { InterviewComponent } from './views/interview/interview.component';
 import { ReportComponent } from './views/report/report.component';
 import { SectionsResolver } from './core/resolvers/sections.resolver';
+import { SectionDetailsResolver } from './core/resolvers/section.details.resolver';
 
 
 const routes: Routes = [
@@ -21,8 +22,11 @@ const routes: Routes = [
     }
   },
   {
-    path: 'details',
-    component: SectionDetailsComponent
+    path: 'details/:sectionId',
+    component: SectionDetailsComponent,
+    resolve: {
+      sectionDetails: SectionDetailsResolver
+    }
   },
   {
     path: 'interview',

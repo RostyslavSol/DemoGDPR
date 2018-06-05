@@ -2,7 +2,7 @@ import { Action } from "@ngrx/store";
 import { ISection } from "../../../models/dashboard/section.model";
 
 export enum DashboardActionTypes {
-  Load = '[Dashboard] Load Sections'
+  LoadSections = '[Dashboard] Load Sections'
 }
 
 export class LoadSections implements Action {
