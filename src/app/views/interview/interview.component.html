@@ -16,13 +16,13 @@
   <main class="interviewFrame__body">
     <div class="row">
       <div class="interviewFrame__column--1 col-4">
-        <question [question]="question"></question>
+        <question [question]="question$ | async"></question>
       </div>
       <div class="interviewFrame__column--2 col-6">
-        <answers [answers]="question.answers"></answers>
+        <answers [answers]="(question$ | async).answers"></answers>
       </div>
       <div class="interviewFrame__column--3 col-2">
-        <references [references]="question.references"></references>
+        <references [references]="(question$ | async).references"></references>
       </div>
     </div>
   </main>

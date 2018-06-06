@@ -6,6 +6,7 @@ const storeLogger = (reducer) => (state, action) => {
   const nextState = reducer(state, action);
 
   console.log(action.type);
+  console.log(nextState);
 
   return nextState;
 };

@@ -7,6 +7,7 @@ import { IAnswer } from '../../../../models/interview/answer.model';
 import { APP_CONFIG, IAppConfig } from '../../../tokens/app.config';
 import { Store } from '@ngrx/store';
 import { State } from '../../../redux';
+import { InterviewActionTypes } from '../../../redux/actions/interview.actions';
 
 @Injectable()
 export class InterviewService {
@@ -22,9 +23,10 @@ export class InterviewService {
             .get<IQuestion>(this._config.sectionQuestion(sectionId, questionId))
             .pipe(
               tap(data => {
-                // this._store.dispatch({
-                //   // TODO:
-                // })
+                this._store.dispatch({
+                  type: InterviewActionTypes.LoadQuestion,
+                  payload: data
+                });
 
                 return data;
               })

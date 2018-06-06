@@ -1,5 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IQuestion } from '../../../../models/interview/question.model';
+import { Store } from '@ngrx/store';
+import { State } from '../../../../core/redux';
+import { Observable } from 'rxjs';
+import { selectors } from '../../../../core/redux/reducers/interview.reducers';
+import { InterviewActionTypes } from '../../../../core/redux/actions/interview.actions';
 
 @Component({
   selector: 'question',
@@ -9,13 +14,17 @@ import { IQuestion } from '../../../../models/interview/question.model';
 export class QuestionComponent implements OnInit {
   @Input() question: IQuestion;
 
-  isInfoVisible = false;
+  isInfoVisible$: Observable<boolean>;
 
-  constructor() { }
+  constructor(private _store: Store<State>) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.isInfoVisible$ = this._store.select(selectors.isVisibleInfoSelector);
+  }
 
   toggleInfoVisibility() {
-    this.isInfoVisible = !this.isInfoVisible;
+    this._store.dispatch({
+      type: InterviewActionTypes.ToggleMoreInfo,
+    });
   }
 }

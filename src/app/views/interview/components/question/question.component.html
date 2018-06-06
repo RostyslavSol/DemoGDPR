@@ -26,12 +26,12 @@
   <div class="question__info">
     <div class="pointer" (click)="toggleInfoVisibility()">
       <i class="fa" [ngClass]="{
-        'fa-chevron-down': !isInfoVisible,
-        'fa-chevron-up': isInfoVisible
+        'fa-chevron-down': !(isInfoVisible$ | async),
+        'fa-chevron-up': (isInfoVisible$ | async)
       }"></i>
       <span class="p-l-1">Show more information...</span>
     </div>
-    <div *ngIf="isInfoVisible">
+    <div *ngIf="(isInfoVisible$ | async)">
       {{ question.info }}
     </div>
   </div>
