@@ -6,7 +6,7 @@ import * as fromDashboard from '../../core/redux/reducers/dashboard.reducers';
 import { ISection } from '../../models/dashboard/section.model';
 import { State } from './../../core/redux/index';
 import { DashboardActionTypes } from '../../core/redux/actions/dashboard.actions';
-import { SelectSectionType } from '../../core/redux/actions/select.section.action';
+import { CommonActionTypes } from '../../core/redux/actions/select.section.action';
 
 
 @Component({
@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
 
   public selectSection(section: ISection): void {
     this._store.dispatch({
-      type: SelectSectionType,
+      type: CommonActionTypes.SelectSection,
       payload: section
     });
 
