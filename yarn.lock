@@ -204,7 +204,7 @@
 
 "@ngrx/store@^6.0.1":
   version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.0.1.tgz#02c806ce20c698b997e81f5671e0edc07d32cf86"
+  resolved "https://registry.yarnpkg.com/@ngrx/redux/-/store-6.0.1.tgz#02c806ce20c698b997e81f5671e0edc07d32cf86"
 
 "@ngtools/webpack@6.0.1":
   version "6.0.1"

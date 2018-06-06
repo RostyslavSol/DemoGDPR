@@ -6,10 +6,12 @@ export interface IAppConfig {
   apiUrl: string;
   sectionsUrl: string;
   sectionDetails: Function;
+  sectionQuestion: Function;
 }
 
 export class AppConfig implements IAppConfig {
   apiUrl         = '/api';
   sectionsUrl    = '/api/sections';
-  sectionDetails = (id: number) => `/api/section/${id}`;
+  sectionDetails = (sectionId: number) => `/api/section/${sectionId}`;
+  sectionQuestion = (sectionId: number, questionId: number) => `/api/section/${sectionId}/question/${questionId}`;
 }

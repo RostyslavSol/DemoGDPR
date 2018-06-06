@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 
 export class AnnouncementComponent implements OnInit {
+  @Input() sectionId: number;
   @Input() announcement: IAnnouncement;
 
   constructor(private _router: Router) { }
@@ -15,8 +16,6 @@ export class AnnouncementComponent implements OnInit {
   ngOnInit() { }
 
   startInterview() {
-    window.setTimeout(() => {
-      this._router.navigate(['/interview']);
-    }, 500);
+    this._router.navigate([`/interview/${this.sectionId}/1`]);
   }
 }

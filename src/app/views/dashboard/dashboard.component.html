@@ -1,7 +1,7 @@
 <div class="dashboard">
 
   <div class="dashboard__tiles">
-    <section class="tile" *ngFor="let section of sections$ | async" routerLink="/details/1">
+    <section class="tile" *ngFor="let section of sections$ | async" (click)="selectSection(section)">
       <div class="tile__head">
         {{ section.title }}
       </div>

@@ -1,6 +1,9 @@
 <div class="sectionDetails">
 
-  <announcement [announcement]="(sectionDetails$ | async).announcement"></announcement>
+  <announcement
+    [sectionId]="(sectionDetails$ | async).sectionId"
+    [announcement]="(sectionDetails$ | async).announcement">
+  </announcement>
 
   <section-details-panel [overview]="(sectionDetails$ | async).overviews"></section-details-panel>
 

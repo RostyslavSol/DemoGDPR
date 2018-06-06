@@ -9,7 +9,6 @@ export class LoadSections implements Action {
   type: string;
 
   constructor(public payload: ISection[]) {}
-
 }
 
 export type DashboardAction = LoadSections;

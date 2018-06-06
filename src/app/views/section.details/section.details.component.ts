@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { State } from '../../core/store';
-import * as fromSectionDetails from '../../core/store/reducers/section.details.reducers';
+import { State } from '../../core/redux';
+import * as fromSectionDetails from '../../core/redux/reducers/section.details.reducers';
 import { IAnnouncement } from '../../models/section.details/announcement.model';
 import { IOverviewItem } from '../../models/section.details/overview.model';
 import { pluck } from 'rxjs/operators';

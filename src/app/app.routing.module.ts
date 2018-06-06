@@ -7,6 +7,7 @@ import { InterviewComponent } from './views/interview/interview.component';
 import { ReportComponent } from './views/report/report.component';
 import { SectionsResolver } from './core/resolvers/sections.resolver';
 import { SectionDetailsResolver } from './core/resolvers/section.details.resolver';
+import { QuestionResolver } from './core/resolvers/question.resolver';
 
 
 const routes: Routes = [
@@ -29,8 +30,11 @@ const routes: Routes = [
     }
   },
   {
-    path: 'interview',
-    component: InterviewComponent
+    path: 'interview/:sectionId/:questionId',
+    component: InterviewComponent,
+    resolve: {
+      question: QuestionResolver
+    }
   },
   {
     path: 'report',

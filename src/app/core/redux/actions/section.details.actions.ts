@@ -12,10 +12,4 @@ export class LoadSectionDetails implements Action {
   constructor(public payload: ISectionDetails) {}
 }
 
-export class StartInterview implements Action {
-  type: string;
-
-  constructor(public payload: ISectionDetails) {}
-}
-
-export type SectionDetailsAction = LoadSectionDetails | StartInterview;
+export type SectionDetailsAction = LoadSectionDetails;

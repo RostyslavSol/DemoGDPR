@@ -7,27 +7,24 @@ import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 import { Store } from '@ngrx/store';
-import { DashboardState } from '../../../store/reducers/dashboard.reducers';
-import { DashboardActionTypes } from '../../../store/actions/dashboard.actions';
-import { State } from '../../../store';
+import { DashboardState } from '../../../redux/reducers/dashboard.reducers';
+import { DashboardActionTypes } from '../../../redux/actions/dashboard.actions';
+import { State } from '../../../redux';
 
 
 
 @Injectable()
 export class DashboardService {
-  config: IAppConfig;
-
   constructor(
-    @Inject(APP_CONFIG) config: IAppConfig,
+    @Inject(APP_CONFIG)
+    private _config: IAppConfig,
     private _httpClient: HttpClient,
     private _store: Store<State>
-  ) {
-    this.config = config;
-  }
+  ) {}
 
   public getSections(): Observable<ISection[]> {
     return this._httpClient
-            .get<ISection[]>(this.config.sectionsUrl)
+            .get<ISection[]>(this._config.sectionsUrl)
             .pipe(
               tap(data => {
 
