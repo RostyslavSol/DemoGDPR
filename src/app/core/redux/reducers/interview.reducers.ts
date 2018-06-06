@@ -31,34 +31,32 @@ export const selectors = {
   )
 };
 
-export const reducer: ActionReducer<InterviewState> = (
-  state: InterviewState,
-  action: InterviewAction
-): InterviewState => {
-  switch (action.type) {
-    case InterviewActionTypes.ToggleMoreInfo:
-      return {
-        ...state,
-        isVisibleAdditionalInfo: !state.isVisibleAdditionalInfo
-      };
+export const reducer: ActionReducer<InterviewState> =
+  (state: InterviewState, action: InterviewAction): InterviewState => {
+    switch (action.type) {
+      case InterviewActionTypes.ToggleMoreInfo:
+        return {
+          ...state,
+          isVisibleAdditionalInfo: !state.isVisibleAdditionalInfo
+        };
 
-    case InterviewActionTypes.LoadQuestion:
-      return {
-        ...state,
-        question: (action as LoadQuestion).payload
-      };
+      case InterviewActionTypes.LoadQuestion:
+        return {
+          ...state,
+          question: (action as LoadQuestion).payload
+        };
 
-    case InterviewActionTypes.SubmitAnswer:
-      const payload = (action as SubmitAnswer).payload;
-      return {
-        ...state,
-        submittedAnswers: state.submittedAnswers ? [
-          ...state.submittedAnswers,
-          payload
-        ] : [payload]
-      };
+      case InterviewActionTypes.SubmitAnswer:
+        const payload = (action as SubmitAnswer).payload;
+        return {
+          ...state,
+          submittedAnswers: state.submittedAnswers ? [
+            ...state.submittedAnswers,
+            payload
+          ] : [payload]
+        };
 
-    case InterviewActionTypes.FinishInterview:
-      return { ...state };
-  }
-};
+      case InterviewActionTypes.FinishInterview:
+        return { ...state };
+    }
+  };

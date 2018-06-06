@@ -17,15 +17,13 @@ export const sectionsSelector = createSelector(
   (state: DashboardState) => state ? state.sections : []
 );
 
-export const reducer: ActionReducer<DashboardState> = (
-  state: DashboardState,
-  action: DashboardAction
-): DashboardState => {
-  switch (action.type) {
-    case DashboardActionTypes.LoadSections:
-      return {
-        ...state,
-        sections: action.payload
-      };
-  }
-};
+export const reducer: ActionReducer<DashboardState> =
+  (state: DashboardState, action: DashboardAction): DashboardState => {
+    switch (action.type) {
+      case DashboardActionTypes.LoadSections:
+        return {
+          ...state,
+          sections: action.payload
+        };
+    }
+  };

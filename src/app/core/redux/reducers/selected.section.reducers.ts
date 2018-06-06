@@ -9,12 +9,10 @@ export const sectionSelector = createSelector(
   (state: ISection) => state
 );
 
-export const reducer: ActionReducer<ISection> = (
-  state: ISection,
-  action: SelectSection
-): ISection => {
-  switch (action.type) {
-    case SelectSectionType:
-      return action.payload;
-  }
-};
+export const reducer: ActionReducer<ISection> =
+  (state: ISection, action: SelectSection): ISection => {
+    switch (action.type) {
+      case SelectSectionType:
+        return action.payload;
+    }
+  };

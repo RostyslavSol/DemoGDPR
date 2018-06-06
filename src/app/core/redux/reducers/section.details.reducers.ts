@@ -13,15 +13,13 @@ export const sectionDetailsSelector = createSelector(
   (state: SectionDetailsState) => state ? state.details : null
 );
 
-export const reducer: ActionReducer<SectionDetailsState> = (
-  state: SectionDetailsState,
-  action: SectionDetailsAction
-): SectionDetailsState => {
-  switch (action.type) {
-    case SectionDetailsActionTypes.LoadSectionDetails:
-      return {
-        ...state,
-        details: action.payload
-      };
-  }
-};
+export const reducer: ActionReducer<SectionDetailsState> =
+  (state: SectionDetailsState, action: SectionDetailsAction): SectionDetailsState => {
+    switch (action.type) {
+      case SectionDetailsActionTypes.LoadSectionDetails:
+        return {
+          ...state,
+          details: action.payload
+        };
+    }
+  };

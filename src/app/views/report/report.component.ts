@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { IReport } from '../../models/report/report.model';
+import { Store } from '@ngrx/store';
+import { State } from '../../core/redux';
+import { Observable } from 'rxjs';
+import { reportSelector } from '../../core/redux/reducers/report.reducers';
 
 @Component({
   selector: 'report',
   templateUrl: 'report.component.html'
 })
 export class ReportComponent implements OnInit {
-  report: IReport;
+  report$: Observable<IReport>;
 
-  constructor() { }
+  constructor(private _store: Store<State>) { }
 
   ngOnInit() {
-    this.report = {
-      sectionId: '',
-      summary: [
-        { isSuccess: true,  text: 'Your organization has legal bases for personal data processing: consent' },
-        { isSuccess: false, text: 'Your consent form is compliant with GDPR requirements' },
-        { isSuccess: true,  text: 'Your cookie policy is not conforming regulation requirements' }
-      ]
-    };
+    this.report$ = this._store.select(reportSelector);
   }
 
 }

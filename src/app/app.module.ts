@@ -24,6 +24,7 @@ import { AppStoreModule } from './core/redux/store.module';
 import { SectionsResolver } from './core/resolvers/sections.resolver';
 import { SectionDetailsResolver } from './core/resolvers/section.details.resolver';
 import { QuestionResolver } from './core/resolvers/question.resolver';
+import { ReportResolver } from './core/resolvers/report.resolver';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { QuestionResolver } from './core/resolvers/question.resolver';
     SectionsResolver,
     SectionDetailsResolver,
     QuestionResolver,
+    ReportResolver,
     {
       provide: APP_CONFIG,
       useClass: AppConfig

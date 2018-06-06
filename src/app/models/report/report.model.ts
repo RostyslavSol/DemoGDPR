@@ -4,6 +4,7 @@ export interface ISummaryItem {
 }
 
 export interface IReport {
-  sectionId: string;
+  sectionId: number;
+  sectionName: string;
   summary: ISummaryItem[];
 }

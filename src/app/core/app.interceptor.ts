@@ -5,6 +5,7 @@ import { Observable, of } from "rxjs";
 import { ISection } from '../models/dashboard/section.model';
 import { ISectionDetails } from '../models/section.details/section.details.model';
 import { IQuestion } from '../models/interview/question.model';
+import { IReport } from '../models/report/report.model';
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
@@ -116,6 +117,16 @@ export class AppInterceptor implements HttpInterceptor {
     ]
   };
 
+  report: IReport = {
+    sectionId: 1,
+    sectionName: 'Lawfulness of Personal Data  Processing',
+    summary: [
+      { isSuccess: true,  text: 'Your organization has legal bases for personal data processing: consent' },
+      { isSuccess: false, text: 'Your consent form is compliant with GDPR requirements' },
+      { isSuccess: true,  text: 'Your cookie policy is not conforming regulation requirements' }
+    ]
+  };
+
   respond = (body: any) => of(new HttpResponse({
     status: 200,
     body: body
@@ -124,6 +135,10 @@ export class AppInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.url.includes('question/1')) {
       return this.respond(this.question);
+    }
+
+    if (req.url.includes('report')) {
+      return this.respond(this.report);
     }
 
     if (req.url.includes('sections')) {

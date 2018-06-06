@@ -12,4 +12,5 @@ export class LoadSectionDetails implements Action {
   constructor(public payload: ISectionDetails) {}
 }
 
-export type SectionDetailsAction = LoadSectionDetails;
+export type SectionDetailsAction =
+  | LoadSectionDetails;

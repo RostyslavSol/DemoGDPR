@@ -8,12 +8,12 @@
       </div>
       <div class="col-8 text-left p-t-3">
         <span class="report__header report__header-txt">
-          Lawfulness of Personal Data  Processing
+          {{ (report$ | async).sectionName }}
         </span>
       </div>
     </div>
 
-    <div class="report__tile" *ngFor="let item of report.summary">
+    <div class="report__tile" *ngFor="let item of (report$ | async).summary">
       <div class="report__tile__icon">
         <img if-src
             trueSrc="/assets/images/svg/success.svg"
