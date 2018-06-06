@@ -20,11 +20,16 @@ import { ViewsModule } from './views/views.module';
 import { APP_CONFIG, AppConfig } from './core/tokens/app.config';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { AppStoreModule } from './core/redux/store.module';
 import { SectionsResolver } from './core/resolvers/sections.resolver';
 import { SectionDetailsResolver } from './core/resolvers/section.details.resolver';
 import { QuestionResolver } from './core/resolvers/question.resolver';
 import { ReportResolver } from './core/resolvers/report.resolver';
+import {
+  AppStoreModule,
+  DashboardStoreModule,
+  SectionDetailsStoreModule,
+  InterviewStoreModule,
+  ReportStoreModule } from './core/redux/store.module';
 
 
 @NgModule({
@@ -41,7 +46,12 @@ import { ReportResolver } from './core/resolvers/report.resolver';
     AppRoutingModule,
     ViewsModule,
     SharedComponentsModule,
-    AppStoreModule
+    // Redux modules
+    AppStoreModule,
+    DashboardStoreModule,
+    SectionDetailsStoreModule,
+    InterviewStoreModule,
+    ReportStoreModule
   ],
   providers: [
     // Services
