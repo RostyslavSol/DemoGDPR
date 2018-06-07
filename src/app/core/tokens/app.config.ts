@@ -1,4 +1,5 @@
-import { InjectionToken } from "@angular/core";
+import { InjectionToken } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 export const APP_CONFIG = new InjectionToken('config');
 
@@ -14,16 +15,20 @@ export interface IAppConfig {
  * Routes:
  *    GET:
  *      /sections
- *      /section/:id
- *      /section/:id/question/:id
- *      /section/:id/report
+ *      /sections/:id
+ *      /sections/:id/questions/:id
+ *      /sections/:id/report
  *    POST:
- *      /section/:id
+ *      /sections/:id
  */
 export class AppConfig implements IAppConfig {
-  apiUrl          = '/api';
-  sectionsUrl     = '/api/sections';
-  sectionDetails  = (sectionId: number) => `/api/section/${sectionId}`;
-  sectionQuestion = (sectionId: number, questionId: number) => `/api/section/${sectionId}/question/${questionId}`;
-  sectionReport   = (sectionId: number) => `/api/section/${sectionId}/report`;
+  apiUrl          = `/${environment.knowledge_base_api}`;
+  sectionsUrl     = `/${environment.knowledge_base_api}/sections`;
+
+  sectionDetails  = (sectionId: number) => `/${environment.knowledge_base_api}/sections/${sectionId}`;
+
+  sectionQuestion = (sectionId: number, questionId: number) =>
+                      `/${environment.knowledge_base_api}/sections/${sectionId}/questions/${questionId}`
+
+  sectionReport   = (sectionId: number) => `/${environment.knowledge_base_api}/sections/${sectionId}/report`;
 }

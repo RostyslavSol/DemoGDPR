@@ -6,7 +6,8 @@ import { AppInterceptor } from "../app/core/app.interceptor";
 
 export const environment = {
   production: false,
-  interceptor: AppInterceptor
+  interceptor: AppInterceptor,
+  knowledge_base_api: 'http://localhost:4000'
 };
 
 /*
