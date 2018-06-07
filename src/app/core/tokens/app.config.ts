@@ -22,13 +22,13 @@ export interface IAppConfig {
  *      /sections/:id
  */
 export class AppConfig implements IAppConfig {
-  apiUrl          = `/${environment.knowledge_base_api}`;
-  sectionsUrl     = `/${environment.knowledge_base_api}/sections`;
+  apiUrl          = `${environment.knowledge_base_api}`;
+  sectionsUrl     = `${environment.knowledge_base_api}/sections`;
 
-  sectionDetails  = (sectionId: number) => `/${environment.knowledge_base_api}/sections/${sectionId}`;
+  sectionDetails  = (sectionId: number) => `${environment.knowledge_base_api}/sections/${sectionId}`;
 
   sectionQuestion = (sectionId: number, questionId: number) =>
-                      `/${environment.knowledge_base_api}/sections/${sectionId}/questions/${questionId}`
+                      `${environment.knowledge_base_api}/sections/${sectionId}/questions/${questionId}`
 
-  sectionReport   = (sectionId: number) => `/${environment.knowledge_base_api}/sections/${sectionId}/report`;
+  sectionReport   = (sectionId: number) => `${environment.knowledge_base_api}/sections/${sectionId}/report`;
 }
