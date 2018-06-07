@@ -10,6 +10,16 @@ export interface IAppConfig {
   sectionReport: Function;
 }
 
+/**
+ * Routes:
+ *    GET:
+ *      /sections
+ *      /section/:id
+ *      /section/:id/question/:id
+ *      /section/:id/report
+ *    POST:
+ *      /section/:id
+ */
 export class AppConfig implements IAppConfig {
   apiUrl          = '/api';
   sectionsUrl     = '/api/sections';
