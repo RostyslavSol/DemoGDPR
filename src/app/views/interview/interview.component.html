@@ -19,7 +19,12 @@
         <question [question]="question$ | async"></question>
       </div>
       <div class="interviewFrame__column--2 col-6">
-        <answers [answers]="(question$ | async).answers"></answers>
+        <answers
+          [sectionId]="(section$ | async).sectionId"
+          [questionId]="(question$ | async).questionId"
+          [isLastQuestion]="(question$ | async).isLast"
+          [answers]="(question$ | async).answers">
+        </answers>
       </div>
       <div class="interviewFrame__column--3 col-2">
         <references [references]="(question$ | async).references"></references>

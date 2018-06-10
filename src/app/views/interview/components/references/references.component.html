@@ -7,4 +7,9 @@
       <a target="_blank" rel="noopener" [href]="reference.link">{{ reference.link }}</a>
     </div>
   </div>
+  <div class="references__item" *ngIf="references.length === 0">
+    <div class="references__item__title">
+      No references provided
+    </div>
+  </div>
 </div>

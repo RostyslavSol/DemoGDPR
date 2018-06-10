@@ -11,7 +11,7 @@ export class QuestionResolver implements Resolve<IQuestion> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IQuestion> {
     const sectionId  = Number(route.paramMap.get('sectionId'));
-    const questionId = Number(route.paramMap.get('sectionId'));
+    const questionId = Number(route.paramMap.get('questionId'));
 
     return this._apiService.getQuestion(sectionId, questionId);
   }

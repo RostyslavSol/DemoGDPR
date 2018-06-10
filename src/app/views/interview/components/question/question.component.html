@@ -3,7 +3,7 @@
     {{ question.title }}
   </div>
 
-  <div class="question__example question__example--invalid">
+  <div class="question__example question__example--invalid" *ngIf="question.invalidExample">
     <div class="question__example__title">
       {{ question.invalidExample.title }}
     </div>
@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <div class="question__example question__example--valid">
+  <div class="question__example question__example--valid" *ngIf="question.validExample">
     <div class="question__example__title">
       {{ question.validExample.title }}
     </div>
