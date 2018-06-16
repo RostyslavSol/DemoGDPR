@@ -7,7 +7,9 @@
   </mat-radio-group>
 
   <div class="text-center">
-    <button mat-button color="primary" (click)="submitAnswer(chosenAnswer)">
+    <button mat-button color="primary"
+          [disabled]="!chosenAnswer"
+          (click)="submitAnswer(chosenAnswer)">
       {{ btnText }}
     </button>
   </div>

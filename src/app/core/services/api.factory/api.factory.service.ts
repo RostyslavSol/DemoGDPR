@@ -13,6 +13,7 @@ import { InterviewService } from './delegates/interview.service';
 import { ReportService }    from './delegates/report.service';
 
 import { Observable }       from 'rxjs';
+import { IAnswersPayload }  from '../../../models/interview/answers.payload';
 
 @Injectable()
 export class ApiFactoryService {
@@ -35,8 +36,8 @@ export class ApiFactoryService {
     return this._interviewService.getQuestion(sectionId, questionId);
   }
 
-  public postAnswer(sectionId: number, questionId: number): Observable<IAnswer> {
-    return this._interviewService.postAnswer(sectionId, questionId);
+  public postAnswers(sectionId: number, answers: IAnswer[]): Observable<IAnswersPayload> {
+    return this._interviewService.postAnswers(sectionId, answers);
   }
 
   public getReport(sectionId: number): Observable<IReport> {

@@ -44,6 +44,14 @@
 
     &__text {
       display: inline-block;
+
+      &--compliant {
+        color: $color-green;
+      }
+
+      &--noncompliant {
+        color: $color-red;
+      }
     }
   }
 }

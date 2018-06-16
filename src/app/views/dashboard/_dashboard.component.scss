@@ -48,9 +48,14 @@
         vertical-align: bottom;
       }
     }
+
+    &.disabled {
+      opacity: 0.5;
+      cursor: initial;
+    }
   }
 
-  .tile:hover {
+  .tile:hover:not(.disabled) {
     cursor: pointer;
 
     .tile__head {

@@ -6,10 +6,25 @@
           Report:
         </span>
       </div>
-      <div class="col-8 text-left p-t-3">
+      <div class="col-4 text-left p-t-3">
         <span class="report__header report__header-txt">
           {{ (report$ | async).sectionName }}
         </span>
+      </div>
+      <div class="col-4 text-left p-t-3">
+        <div class="report__tile__icon">
+          <img if-src
+            trueSrc="/assets/images/svg/success.svg"
+            falseSrc="/assets/images/svg/error.svg"
+            [flag]="(report$ | async).isCompliant">
+        </div>
+        <div class="report__tile__text"
+            [ngClass]="{
+              'report__tile__text--compliant': (report$ | async).isCompliant,
+              'report__tile__text--noncompliant': !(report$ | async).isCompliant
+            }">
+          {{ (report$ | async).isCompliant ? 'Is compliant with GDPR' : 'Is not compliant with GDPR' }}
+        </div>
       </div>
     </div>
 

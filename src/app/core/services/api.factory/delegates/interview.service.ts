@@ -8,6 +8,7 @@ import { APP_CONFIG, IAppConfig } from '../../../tokens/app.config';
 import { Store } from '@ngrx/store';
 import { State } from '../../../redux';
 import { InterviewActionTypes } from '../../../redux/actions/interview.actions';
+import { IAnswersPayload } from '../../../../models/interview/answers.payload';
 
 @Injectable()
 export class InterviewService {
@@ -33,7 +34,13 @@ export class InterviewService {
             );
   }
 
-  public postAnswer(sectionId: number, questionId: number): Observable<IAnswer> {
-    return null;
+  public postAnswers(sectionId: number, answers: IAnswer[]): Observable<IAnswersPayload> {
+    const body: IAnswersPayload = {
+      sectionId: sectionId,
+      answers: answers
+    };
+
+    return this._httpClient
+            .post<IAnswersPayload>(this._config.sectionDetails(sectionId), body);
   }
 }

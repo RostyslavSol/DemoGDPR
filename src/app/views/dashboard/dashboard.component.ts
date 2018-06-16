@@ -28,11 +28,13 @@ export class DashboardComponent implements OnInit {
   }
 
   public selectSection(section: ISection): void {
-    this._store.dispatch({
-      type: CommonActionTypes.SelectSection,
-      payload: section
-    });
+    if (!section.isDisabled) {
+      this._store.dispatch({
+        type: CommonActionTypes.SelectSection,
+        payload: section
+      });
 
-    this._router.navigate(['/details', section.sectionId]);
+      this._router.navigate(['/details', section.sectionId]);
+    }
   }
 }

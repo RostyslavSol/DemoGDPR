@@ -1,17 +1,21 @@
 import { IQuestion } from "../../../models/interview/question.model";
-import { InterviewAnswers, InterviewAction, InterviewActionTypes, LoadQuestion, SubmitAnswer } from "../actions/interview.actions";
+import { InterviewAction, InterviewActionTypes, LoadQuestion, SubmitAnswer } from "../actions/interview.actions";
 import { createFeatureSelector, createSelector, ActionReducer } from "@ngrx/store";
+import { IAnswer } from "../../../models/interview/answer.model";
+import { IAnswersPayload } from "../../../models/interview/answers.payload";
 
 export interface InterviewState {
   isVisibleAdditionalInfo: boolean;
-  submittedAnswers:        InterviewAnswers;
+  submittedAnswers:        IAnswer[];
   question:                IQuestion;
+  interviewPostPayload:    IAnswersPayload;
 }
 
 const initialState: InterviewState = {
   isVisibleAdditionalInfo: false,
   submittedAnswers: [],
-  question: null
+  question: null,
+  interviewPostPayload: null
 };
 
 const interviewFeatureSelector = createFeatureSelector<InterviewState>('InterviewState');
@@ -47,16 +51,13 @@ export const reducer: ActionReducer<InterviewState> =
         };
 
       case InterviewActionTypes.SubmitAnswer:
-        const payload = (action as SubmitAnswer).payload;
+        const payloadAnswer = (action as SubmitAnswer).payload;
         return {
           ...state,
           submittedAnswers: state.submittedAnswers ? [
             ...state.submittedAnswers,
-            payload
-          ] : [payload]
+            payloadAnswer
+          ] : [payloadAnswer]
         };
-
-      case InterviewActionTypes.FinishInterview:
-        return { ...state };
     }
   };
